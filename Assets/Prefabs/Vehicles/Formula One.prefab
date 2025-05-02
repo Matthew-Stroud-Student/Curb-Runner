@@ -52,8 +52,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -133,8 +133,8 @@ MonoBehaviour:
   initialDrag: 0.2
   dragFactor: 0.0035
   turnFactor: 0.7
-  driftFactor: 0
-  minSpeedBeforeAllowTurning: 1
+  driftFactor: 0.2
+  minSpeedBeforeAllowTurning: 0.5
   offTrackTurnFactor: 0.4
   offTrackDriftFactor: 0.99
   speedometer: {fileID: 161385356775489034}
@@ -500,7 +500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392095067105558882, guid: 646de98d973bd7a47b398c93626fe578, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 392095067105558882, guid: 646de98d973bd7a47b398c93626fe578, type: 3}
       propertyPath: m_LocalPosition.z

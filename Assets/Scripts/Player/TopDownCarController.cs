@@ -19,6 +19,7 @@ public class TopDownCarController : MonoBehaviour
     public float minSpeedBeforeAllowTurning = 3f;
     public float offTrackTurnFactor = 1.0f;
     public float offTrackDriftFactor = 1.0f;
+    public float transitionDuration = 1f;
 
     public Text speedometer;
 
@@ -32,6 +33,7 @@ public class TopDownCarController : MonoBehaviour
 
     float defaultTurnFactor = 0;
     float defaultDriftFactor = 0;
+    private Coroutine currentCoroutine;
 
     //Components
     Rigidbody2D carRigidbody2D;
@@ -112,7 +114,7 @@ public class TopDownCarController : MonoBehaviour
 
         //Apply force and pushes the car forward
         carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
-        carRigidbody2D.drag = ((Mathf.Abs(velocityVsUp) * (((Mathf.Abs(steeringInput) * 4) * turnFactor) + 1)) * dragFactor + initialDrag) ;
+        carRigidbody2D.drag = ((Mathf.Abs(velocityVsUp) * (((Mathf.Abs(steeringInput) * 2) * turnFactor) + 1)) * dragFactor + initialDrag) ;
     }
 
     void ApplySteering()
@@ -147,8 +149,7 @@ public class TopDownCarController : MonoBehaviour
         if (other.gameObject.CompareTag("Off Track"))
         {
             print("Off Track");
-            turnFactor = offTrackTurnFactor;
-            driftFactor = offTrackDriftFactor;
+            StartTransition(offTrackTurnFactor);
             AdjustParticleEmission();
         }
     }
@@ -167,8 +168,7 @@ public class TopDownCarController : MonoBehaviour
         if (other.gameObject.CompareTag("Off Track"))
         {
             print("On Track");
-            turnFactor = defaultTurnFactor;
-            driftFactor = defaultDriftFactor;
+            StartTransition(defaultTurnFactor);
             StopParticleEmission();
         }
     }
@@ -182,7 +182,7 @@ public class TopDownCarController : MonoBehaviour
             var emission = dustParticleSystem.emission;
 
             // Set the rateOverTime based on the velocityVsUp variable (adjust as needed)
-            emission.rateOverTime = velocityVsUp * 2;
+            emission.rateOverTime = Mathf.Abs(velocityVsUp) * 4;
         }
     }
 
@@ -194,5 +194,28 @@ public class TopDownCarController : MonoBehaviour
             var emission = dustParticleSystem.emission;
             emission.rateOverTime = 0;
         }
+    }
+
+    private void StartTransition(float targetValue)
+    {
+        if (currentCoroutine != null)
+            StopCoroutine(currentCoroutine);
+
+        currentCoroutine = StartCoroutine(OffTrackFactor(targetValue));
+    }
+
+    private IEnumerator OffTrackFactor(float target)
+    {
+        float start = turnFactor;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < transitionDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            turnFactor = Mathf.Lerp(start, target, timeElapsed / transitionDuration);
+            yield return null;
+        }
+
+        turnFactor = target;
     }
 }

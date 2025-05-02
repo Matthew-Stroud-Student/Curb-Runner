@@ -224,14 +224,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Formula One
       objectReference: {fileID: 0}
-    - target: {fileID: 3050620171506262238, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3050620171506262238, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
