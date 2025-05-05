@@ -138,6 +138,31 @@ public class TopDownCarController : MonoBehaviour
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
 
+    float GetLateralVelocity()
+    {
+        //Returns how fast the car is moving sideways.
+        return Vector2.Dot(transform.right, carRigidbody2D.velocity);
+    }
+
+    public bool IsTireScreeching(out float lateralVelocity, out bool isBraking)
+    {
+        lateralVelocity = GetLateralVelocity();
+        isBraking = false;
+
+        //Check if we are moving forward and if the player is hitting the brakes. In that case the tires should screech.
+        if (accelerationInput < 0 && velocityVsUp > 0 && Mathf.Abs(GetLateralVelocity()) > 0.15f)
+        {
+            isBraking = true;
+            return true;
+        }
+
+        //If we have alot of side movement then the tires should be screeching
+        if (Mathf.Abs(GetLateralVelocity()) > 0.2f)
+            return true;
+
+        return false;
+    }
+
     public void SetInputVector(Vector2 inputVector)
     {
         steeringInput = inputVector.x;
@@ -149,7 +174,7 @@ public class TopDownCarController : MonoBehaviour
         if (other.gameObject.CompareTag("Off Track"))
         {
             print("Off Track");
-            StartTransition(offTrackTurnFactor);
+            StartTransition(offTrackTurnFactor, offTrackDriftFactor);
             AdjustParticleEmission();
         }
     }
@@ -168,7 +193,7 @@ public class TopDownCarController : MonoBehaviour
         if (other.gameObject.CompareTag("Off Track"))
         {
             print("On Track");
-            StartTransition(defaultTurnFactor);
+            StartTransition(defaultTurnFactor, defaultDriftFactor);
             StopParticleEmission();
         }
     }
@@ -196,26 +221,31 @@ public class TopDownCarController : MonoBehaviour
         }
     }
 
-    private void StartTransition(float targetValue)
+    private void StartTransition(float turnTargetValue, float driftTargetValue)
     {
         if (currentCoroutine != null)
             StopCoroutine(currentCoroutine);
 
-        currentCoroutine = StartCoroutine(OffTrackFactor(targetValue));
+        currentCoroutine = StartCoroutine(OffTrackFactor(turnTargetValue, driftTargetValue));
     }
 
-    private IEnumerator OffTrackFactor(float target)
+    private IEnumerator OffTrackFactor(float turnTarget, float driftTarget)
     {
-        float start = turnFactor;
+        float startTurn = turnFactor;
+        float startDrift = driftFactor;
         float timeElapsed = 0f;
 
         while (timeElapsed < transitionDuration)
         {
             timeElapsed += Time.deltaTime;
-            turnFactor = Mathf.Lerp(start, target, timeElapsed / transitionDuration);
+
+            turnFactor = Mathf.Lerp(startTurn, turnTarget, timeElapsed / transitionDuration);
+            driftFactor = Mathf.Lerp(startDrift, driftTarget, timeElapsed / transitionDuration);
+
             yield return null;
         }
 
-        turnFactor = target;
+        turnFactor = turnTarget;
+        driftFactor = driftTarget;
     }
 }
