@@ -89,12 +89,12 @@ public class TopDownCarController : MonoBehaviour
                 carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 2.0f, Time.fixedDeltaTime * 3);
                 break;
 
-            case Surface.SurfaceTypes.Grass:
-                carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 5.0f, Time.fixedDeltaTime * 3);
-                break;
-
             case Surface.SurfaceTypes.Gravel:
                 carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 8.0f, Time.fixedDeltaTime * 3);
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 5.0f, Time.fixedDeltaTime * 3);
                 break;
         }
 
@@ -121,11 +121,11 @@ public class TopDownCarController : MonoBehaviour
                 currentTurnFactor = 0.65f;
                 break;
 
-            case Surface.SurfaceTypes.Grass:
-                currentTurnFactor = 0.60f;
+            case Surface.SurfaceTypes.Gravel:
+                currentTurnFactor = 0.45f;
                 break;
 
-            case Surface.SurfaceTypes.Gravel:
+            case Surface.SurfaceTypes.Grass:
                 currentTurnFactor = 0.55f;
                 break;
         }
@@ -152,12 +152,12 @@ public class TopDownCarController : MonoBehaviour
                 currentDriftFactor = 0.60f;
                 break;
 
-            case Surface.SurfaceTypes.Grass:
-                currentDriftFactor = 0.80f;
-                break;
-
             case Surface.SurfaceTypes.Gravel:
                 currentDriftFactor = 1.00f;
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                currentDriftFactor = 0.98f;
                 break;
         }
 

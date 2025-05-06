@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: f387b584d25948b4eb75c955618333a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 821277345047147346
+    second: Circuit of the Americas Off Track Gravel_0
+  - first:
+      213: 3108899751598554615
+    second: Circuit of the Americas Off Track Gravel_1
+  - first:
+      213: 5926973918606861869
+    second: Circuit of the Americas Off Track Gravel_2
+  - first:
+      213: 478836015320783398
+    second: Circuit of the Americas Off Track Gravel_3
+  - first:
+      213: -7112907913315701844
+    second: Circuit of the Americas Off Track Gravel_4
+  - first:
+      213: -1200427445141377344
+    second: Circuit of the Americas Off Track Gravel_5
+  - first:
+      213: -753762816158296345
+    second: Circuit of the Americas Off Track Gravel_6
+  - first:
+      213: -806059434602102025
+    second: Circuit of the Americas Off Track Gravel_7
+  - first:
+      213: 4664662321960499275
+    second: Circuit of the Americas Off Track Gravel_8
+  - first:
+      213: -3420138691577182357
+    second: Circuit of the Americas Off Track Gravel_9
+  - first:
+      213: -7090324785935452251
+    second: Circuit of the Americas Off Track Gravel_10
+  - first:
+      213: 6316256412115577898
+    second: Circuit of the Americas Off Track Gravel_11
+  - first:
+      213: -825887000954920279
+    second: Circuit of the Americas Off Track Gravel_12
+  - first:
+      213: 364601705461442506
+    second: Circuit of the Americas Off Track Gravel_13
+  - first:
+      213: 4795474552676014293
+    second: Circuit of the Americas Off Track Gravel_14
+  - first:
+      213: -8606064605595347422
+    second: Circuit of the Americas Off Track Gravel_15
+  - first:
+      213: 7147013935467826947
+    second: Circuit of the Americas Off Track Gravel_16
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_0
+      rect:
+        serializedVersion: 2
+        x: 14132
+        y: 15075
+        width: 1075
+        height: 763
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2537c9dd463c56b00800000000000000
+      internalID: 821277345047147346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_1
+      rect:
+        serializedVersion: 2
+        x: 14184
+        y: 11324
+        width: 570
+        height: 2482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdf4583ad7052b20800000000000000
+      internalID: 3108899751598554615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_2
+      rect:
+        serializedVersion: 2
+        x: 11155
+        y: 10343
+        width: 1175
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2621936067d04250800000000000000
+      internalID: 5926973918606861869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_3
+      rect:
+        serializedVersion: 2
+        x: 12360
+        y: 9894
+        width: 685
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62adbd6a1da25a600800000000000000
+      internalID: 478836015320783398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_4
+      rect:
+        serializedVersion: 2
+        x: 8758
+        y: 8796
+        width: 729
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caba0ca40ffd94d90800000000000000
+      internalID: -7112907913315701844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_5
+      rect:
+        serializedVersion: 2
+        x: 9472
+        y: 9053
+        width: 1295
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cee7b94999375fe0800000000000000
+      internalID: -1200427445141377344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_6
+      rect:
+        serializedVersion: 2
+        x: 10981
+        y: 8695
+        width: 577
+        height: 1274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e69cf956b81a85f0800000000000000
+      internalID: -753762816158296345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_7
+      rect:
+        serializedVersion: 2
+        x: 8526
+        y: 8204
+        width: 254
+        height: 627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f280b4073d40d4f0800000000000000
+      internalID: -806059434602102025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_8
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 7402
+        width: 2068
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48ba99daa53cb040800000000000000
+      internalID: 4664662321960499275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_9
+      rect:
+        serializedVersion: 2
+        x: 8359
+        y: 6367
+        width: 297
+        height: 1368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6709fd0bf93980d0800000000000000
+      internalID: -3420138691577182357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_10
+      rect:
+        serializedVersion: 2
+        x: 4274
+        y: 6239
+        width: 939
+        height: 1155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a77b206c2b1a9d90800000000000000
+      internalID: -7090324785935452251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_11
+      rect:
+        serializedVersion: 2
+        x: 5664
+        y: 6287
+        width: 1859
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2cae6aedb9d7a750800000000000000
+      internalID: 6316256412115577898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_12
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 3562
+        width: 954
+        height: 1586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2287bf52cd984f0800000000000000
+      internalID: -825887000954920279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_13
+      rect:
+        serializedVersion: 2
+        x: 2872
+        y: 3100
+        width: 4173
+        height: 2518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7e782c1535f0500800000000000000
+      internalID: 364601705461442506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_14
+      rect:
+        serializedVersion: 2
+        x: 6748
+        y: 2688
+        width: 1084
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8dda9b2b2fc8240800000000000000
+      internalID: 4795474552676014293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_15
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 1953
+        width: 611
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2265d6d86dd119880800000000000000
+      internalID: -8606064605595347422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circuit of the Americas Off Track Gravel_16
+      rect:
+        serializedVersion: 2
+        x: 8168
+        y: 366
+        width: 925
+        height: 1264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f835cce4b4f2360800000000000000
+      internalID: 7147013935467826947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Circuit of the Americas Off Track Gravel_0: 821277345047147346
+      Circuit of the Americas Off Track Gravel_1: 3108899751598554615
+      Circuit of the Americas Off Track Gravel_10: -7090324785935452251
+      Circuit of the Americas Off Track Gravel_11: 6316256412115577898
+      Circuit of the Americas Off Track Gravel_12: -825887000954920279
+      Circuit of the Americas Off Track Gravel_13: 364601705461442506
+      Circuit of the Americas Off Track Gravel_14: 4795474552676014293
+      Circuit of the Americas Off Track Gravel_15: -8606064605595347422
+      Circuit of the Americas Off Track Gravel_16: 7147013935467826947
+      Circuit of the Americas Off Track Gravel_2: 5926973918606861869
+      Circuit of the Americas Off Track Gravel_3: 478836015320783398
+      Circuit of the Americas Off Track Gravel_4: -7112907913315701844
+      Circuit of the Americas Off Track Gravel_5: -1200427445141377344
+      Circuit of the Americas Off Track Gravel_6: -753762816158296345
+      Circuit of the Americas Off Track Gravel_7: -806059434602102025
+      Circuit of the Americas Off Track Gravel_8: 4664662321960499275
+      Circuit of the Americas Off Track Gravel_9: -3420138691577182357
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
