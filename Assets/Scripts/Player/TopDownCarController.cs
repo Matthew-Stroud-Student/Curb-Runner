@@ -17,9 +17,6 @@ public class TopDownCarController : MonoBehaviour
     public float turnFactor = 3.5f;
     public float driftFactor = 0.95f;
     public float minSpeedBeforeAllowTurning = 3f;
-    public float offTrackTurnFactor = 1.0f;
-    public float offTrackDriftFactor = 1.0f;
-    public float transitionDuration = 1f;
 
     public Text speedometer;
 
@@ -31,42 +28,21 @@ public class TopDownCarController : MonoBehaviour
 
     float velocityVsUp = 0;
 
-    float defaultTurnFactor = 0;
-    float defaultDriftFactor = 0;
-    private Coroutine currentCoroutine;
-
     //Components
     Rigidbody2D carRigidbody2D;
-    private ParticleSystem dustParticleSystem;
+    CarSurfaceHandler carSurfaceHandler;
 
     //Awake is called when the script instance is being loaded.
     private void Awake()
     {
         carRigidbody2D = GetComponent<Rigidbody2D>();
+        carSurfaceHandler = GetComponent<CarSurfaceHandler>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultTurnFactor = turnFactor;
-        defaultDriftFactor = driftFactor;
-
-        Transform dustParticlesTransform = transform.Find("Dust");
-
-        if(dustParticlesTransform != null )
-        {
-            dustParticleSystem = dustParticlesTransform.GetComponent<ParticleSystem>();
-
-            if (dustParticleSystem == null )
-            {
-                Debug.LogWarning("Dust child does not have a ParticleSystem component.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Could not find child object named 'Dust'.");
-        }
-        
+        rotationAngle = transform.rotation.eulerAngles.z;
     }
 
     // Update is called once per frame
@@ -103,10 +79,24 @@ public class TopDownCarController : MonoBehaviour
         if (carRigidbody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
             return;
 
-//        //Apply drag if there is no accelerationInput so the car stops when the player lets go of the accelerator
-//        if (accelerationInput == 0)
-//            carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 0.2f, Time.fixedDeltaTime * 1);
-//        else carRigidbody2D.drag = 0;
+        //Apply drag depending on speed
+        carRigidbody2D.drag = ((Mathf.Abs(velocityVsUp) * (((Mathf.Abs(steeringInput) * 2) * turnFactor) + 1)) * dragFactor + initialDrag);
+
+        //Apply more drag depending on surface
+        switch (GetSurface())
+        {
+            case Surface.SurfaceTypes.Dirt:
+                carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 2.0f, Time.fixedDeltaTime * 3);
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 5.0f, Time.fixedDeltaTime * 3);
+                break;
+
+            case Surface.SurfaceTypes.Gravel:
+                carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 8.0f, Time.fixedDeltaTime * 3);
+                break;
+        }
 
         //Create a force for the engine
         float forceFactor = accelerationInput > 0 ? accelerationFactor : reverseFactor;
@@ -114,7 +104,6 @@ public class TopDownCarController : MonoBehaviour
 
         //Apply force and pushes the car forward
         carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
-        carRigidbody2D.drag = ((Mathf.Abs(velocityVsUp) * (((Mathf.Abs(steeringInput) * 2) * turnFactor) + 1)) * dragFactor + initialDrag) ;
     }
 
     void ApplySteering()
@@ -123,8 +112,26 @@ public class TopDownCarController : MonoBehaviour
         float minSpeedBeforeAllowTurningFactor = (carRigidbody2D.velocity.magnitude / minSpeedBeforeAllowTurning);
         minSpeedBeforeAllowTurningFactor = Mathf.Clamp01(minSpeedBeforeAllowTurningFactor);
 
+        float currentTurnFactor = turnFactor;
+
+        //Apply more turning depending on surface
+        switch (GetSurface())
+        {
+            case Surface.SurfaceTypes.Dirt:
+                currentTurnFactor = 0.65f;
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                currentTurnFactor = 0.60f;
+                break;
+
+            case Surface.SurfaceTypes.Gravel:
+                currentTurnFactor = 0.55f;
+                break;
+        }
+
         //Update the rotaion angle based on input
-        rotationAngle -= steeringInput * turnFactor * minSpeedBeforeAllowTurningFactor;
+        rotationAngle -= steeringInput * currentTurnFactor * minSpeedBeforeAllowTurningFactor;
 
         //Apply steering by rotation the car object
         carRigidbody2D.MoveRotation(rotationAngle);
@@ -132,10 +139,30 @@ public class TopDownCarController : MonoBehaviour
 
     void KillOrthogonalVelocity()
     {
+        //Get forward and right velocity of the car
         Vector2 forwardVelocity = transform.up * Vector2.Dot(carRigidbody2D.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(carRigidbody2D.velocity, transform.right);
 
-        carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
+        float currentDriftFactor = driftFactor;
+
+        //Apply more drift depending on surface
+        switch (GetSurface())
+        {
+            case Surface.SurfaceTypes.Dirt:
+                currentDriftFactor = 0.60f;
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                currentDriftFactor = 0.80f;
+                break;
+
+            case Surface.SurfaceTypes.Gravel:
+                currentDriftFactor = 1.00f;
+                break;
+        }
+
+        //Kill the orthogonal velocity (side velocity) based on how much the car should drift.
+        carRigidbody2D.velocity = forwardVelocity + rightVelocity * currentDriftFactor;
     }
 
     float GetLateralVelocity()
@@ -169,83 +196,13 @@ public class TopDownCarController : MonoBehaviour
         accelerationInput = inputVector.y;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public float GetVelocityMagnitude()
     {
-        if (other.gameObject.CompareTag("Off Track"))
-        {
-            print("Off Track");
-            StartTransition(offTrackTurnFactor, offTrackDriftFactor);
-            AdjustParticleEmission();
-        }
+        return carRigidbody2D.velocity.magnitude;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    public Surface.SurfaceTypes GetSurface()
     {
-        if (other.gameObject.CompareTag("Off Track"))
-        {
-            // Keep adjusting the emission rate if needed
-            AdjustParticleEmission();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Off Track"))
-        {
-            print("On Track");
-            StartTransition(defaultTurnFactor, defaultDriftFactor);
-            StopParticleEmission();
-        }
-    }
-
-    // Method to adjust the emission rate based on velocity
-    private void AdjustParticleEmission()
-    {
-        if (dustParticleSystem != null)
-        {
-            // Get the Emission module of the ParticleSystem
-            var emission = dustParticleSystem.emission;
-
-            // Set the rateOverTime based on the velocityVsUp variable (adjust as needed)
-            emission.rateOverTime = Mathf.Abs(velocityVsUp) * 4;
-        }
-    }
-
-    // Optionally, stop the particle emission when exiting offroad
-    private void StopParticleEmission()
-    {
-        if (dustParticleSystem != null)
-        {
-            var emission = dustParticleSystem.emission;
-            emission.rateOverTime = 0;
-        }
-    }
-
-    private void StartTransition(float turnTargetValue, float driftTargetValue)
-    {
-        if (currentCoroutine != null)
-            StopCoroutine(currentCoroutine);
-
-        currentCoroutine = StartCoroutine(OffTrackFactor(turnTargetValue, driftTargetValue));
-    }
-
-    private IEnumerator OffTrackFactor(float turnTarget, float driftTarget)
-    {
-        float startTurn = turnFactor;
-        float startDrift = driftFactor;
-        float timeElapsed = 0f;
-
-        while (timeElapsed < transitionDuration)
-        {
-            timeElapsed += Time.deltaTime;
-
-            turnFactor = Mathf.Lerp(startTurn, turnTarget, timeElapsed / transitionDuration);
-            driftFactor = Mathf.Lerp(startDrift, driftTarget, timeElapsed / transitionDuration);
-
-            yield return null;
-        }
-
-        turnFactor = turnTarget;
-        driftFactor = driftTarget;
+        return carSurfaceHandler.GetCurrentSurface();
     }
 }

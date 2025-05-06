@@ -9,9 +9,9 @@ public class WheelParticleHandler : MonoBehaviour
 
     //Components
     TopDownCarController topDownCarController;
-
     ParticleSystem particleSystemSmoke;
     ParticleSystem.EmissionModule particleSystemEmissionModule;
+    ParticleSystem.MainModule particleSystemMainModule;
 
     void Awake()
     {
@@ -24,14 +24,11 @@ public class WheelParticleHandler : MonoBehaviour
         //Get the emission component
         particleSystemEmissionModule = particleSystemSmoke.emission;
 
+        //Get the main module
+        particleSystemMainModule = particleSystemSmoke.main;
+
         //Set it to zero emission
         particleSystemEmissionModule.rateOverTime = 0;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -41,13 +38,36 @@ public class WheelParticleHandler : MonoBehaviour
         particleEmissionRate = Mathf.Lerp(particleEmissionRate, 0, Time.deltaTime * 5);
         particleSystemEmissionModule.rateOverTime = particleEmissionRate;
 
+        //Check what surface we are driving and apple different settings
+        switch (topDownCarController.GetSurface())
+        {
+            case Surface.SurfaceTypes.Road:
+                particleSystemMainModule.startColor = new Color(0.83f, 0.83f, 0.83f);
+                break;
+
+            case Surface.SurfaceTypes.Dirt:
+                particleEmissionRate = topDownCarController.GetVelocityMagnitude() * 5;
+                particleSystemMainModule.startColor = new Color(0.64f, 0.42f, 0.24f);
+                break;
+
+            case Surface.SurfaceTypes.Grass:
+                particleEmissionRate = topDownCarController.GetVelocityMagnitude() * 5;
+                particleSystemMainModule.startColor = new Color(0.15f, 0.4f, 0.13f);
+                break;
+
+            case Surface.SurfaceTypes.Gravel:
+                particleEmissionRate = topDownCarController.GetVelocityMagnitude() * 5;
+                particleSystemMainModule.startColor = new Color(0.64f, 0.42f, 0.24f);
+                break;
+        }
+
         if (topDownCarController.IsTireScreeching(out float lateralVelocity, out bool isBraking))
         {
             //If the car tires are screeching then we'll emitt smoke. If the player is braking then emitt a lot of smoke.
             if (isBraking)
-                particleEmissionRate = 50;
+                particleEmissionRate = 30;
             //If the player is drifting we'll emitt smoke based on how much the player is drifting.
-            else particleEmissionRate = Mathf.Abs(lateralVelocity) * 30;
+            else particleEmissionRate = Mathf.Abs(lateralVelocity) * 10;
         }
 
     }
