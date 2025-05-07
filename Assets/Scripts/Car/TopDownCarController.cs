@@ -18,7 +18,7 @@ public class TopDownCarController : MonoBehaviour
     public float driftFactor = 0.95f;
     public float minSpeedBeforeAllowTurning = 3f;
 
-    public Text speedometer;
+    //public Text speedometer;
 
     //Local variables
     float accelerationInput = 0;
@@ -33,10 +33,11 @@ public class TopDownCarController : MonoBehaviour
     CarSurfaceHandler carSurfaceHandler;
 
     //Awake is called when the script instance is being loaded.
-    private void Awake()
+    void Awake()
     {
         carRigidbody2D = GetComponent<Rigidbody2D>();
         carSurfaceHandler = GetComponent<CarSurfaceHandler>();
+        carRigidbody2D.centerOfMass = new Vector3(0f, 0f, 0f);
     }
 
     // Start is called before the first frame update
@@ -65,7 +66,7 @@ public class TopDownCarController : MonoBehaviour
     {
         //Calculate how much "forward" we are going in terms of the direction of our velocity
         velocityVsUp = Vector2.Dot(transform.up, carRigidbody2D.velocity);
-        speedometer.text = "MPH: " + ((int)((velocityVsUp * 36) / 1.609)).ToString();
+        //speedometer.text = "MPH: " + ((int)((velocityVsUp * 36) / 1.609)).ToString();
 
         //Limit so we cannot go faster than the max speed in the "forward" direction
         if (velocityVsUp > maxSpeed && accelerationInput > 0)
@@ -80,7 +81,7 @@ public class TopDownCarController : MonoBehaviour
             return;
 
         //Apply drag depending on speed
-        carRigidbody2D.drag = ((Mathf.Abs(velocityVsUp) * (((Mathf.Abs(steeringInput) * 2) * turnFactor) + 1)) * dragFactor + initialDrag);
+        carRigidbody2D.drag = (Mathf.Abs(velocityVsUp) * dragFactor + initialDrag);
 
         //Apply more drag depending on surface
         switch (GetSurface())
@@ -163,6 +164,8 @@ public class TopDownCarController : MonoBehaviour
 
         //Kill the orthogonal velocity (side velocity) based on how much the car should drift.
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * currentDriftFactor;
+        float yOffset = Mathf.Lerp(-0.2f, 0.14f, currentDriftFactor);
+        carRigidbody2D.centerOfMass = new Vector3(0f, yOffset, 0f);
     }
 
     float GetLateralVelocity()

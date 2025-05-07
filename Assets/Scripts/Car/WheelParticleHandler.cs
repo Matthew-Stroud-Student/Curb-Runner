@@ -34,7 +34,7 @@ public class WheelParticleHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Redice the particles over time.
+        //Reduce the particles over time.
         particleEmissionRate = Mathf.Lerp(particleEmissionRate, 0, Time.deltaTime * 5);
         particleSystemEmissionModule.rateOverTime = particleEmissionRate;
 
