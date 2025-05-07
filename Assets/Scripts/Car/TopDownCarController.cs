@@ -204,6 +204,11 @@ public class TopDownCarController : MonoBehaviour
         return carRigidbody2D.velocity.magnitude;
     }
 
+    public float GetMPH()
+    {
+        return ((int)((velocityVsUp * 36) / 1.609));
+    }
+
     public Surface.SurfaceTypes GetSurface()
     {
         return carSurfaceHandler.GetCurrentSurface();

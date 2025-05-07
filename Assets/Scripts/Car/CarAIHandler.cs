@@ -129,10 +129,10 @@ public class CarAIHandler : MonoBehaviour
     float ApplyThrottleOrBrake(float inputX)
     {
         //if we are going too fast then do not accelerate further.
-        if (topDownCarController.GetVelocityMagnitude() > maxSpeed)
-            return 0;
+        if (topDownCarController.GetMPH() > maxSpeed)
+            return -1;
 
-        //Apply throttle forward based on how much the car wants to turn. If it's a sharp turnthis will cause the car to apply less speed forward.
-        return 1.05f - Mathf.Abs(inputX) / 1.0f;
+        //Apply throttle forward based on how much the car wants to turn. If it's a sharp turn this will cause the car to apply less speed forward.
+        float throttleAmount = 1.0f - Mathf.Abs(inputX) / 1.0f;
     }
 }

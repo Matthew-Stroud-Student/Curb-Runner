@@ -59,7 +59,7 @@ public class CarSurfaceHandler : MonoBehaviour
 
         lastSampledSurfacePosition = transform.position;
 
-        Debug.Log($"Driving on {drivingOnSurface}");
+        //Debug.Log($"Driving on {drivingOnSurface}");
     }
 
     public Surface.SurfaceTypes GetCurrentSurface()
