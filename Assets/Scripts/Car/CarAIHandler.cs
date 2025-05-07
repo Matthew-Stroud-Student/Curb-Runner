@@ -118,7 +118,7 @@ public class CarAIHandler : MonoBehaviour
         angleToTarget *= -1;
 
         //We want the car to turn as much as possible if the angle is greater than 45 degrees and we want it to smooth out so if the angle is small we want the AI to make smaller turns
-        float steerAmount = angleToTarget / 45.0f;
+        float steerAmount = angleToTarget / 30.0f;
 
         //Clamp steering to between -1 and 1.
         steerAmount = Mathf.Clamp(steerAmount, -1.0f, 1.0f);
@@ -133,6 +133,11 @@ public class CarAIHandler : MonoBehaviour
             return -1;
 
         //Apply throttle forward based on how much the car wants to turn. If it's a sharp turn this will cause the car to apply less speed forward.
-        float throttleAmount = 1.0f - Mathf.Abs(inputX) / 1.0f;
+        float throttleAmount = 1.5f - Mathf.Abs(inputX) / 1.0f;
+
+        //Clamp throttle to between -1 and 1.
+        throttleAmount = Mathf.Clamp(throttleAmount, -1.0f, 1.0f);
+
+        return throttleAmount;
     }
 }

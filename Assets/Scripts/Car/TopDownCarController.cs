@@ -21,8 +21,8 @@ public class TopDownCarController : MonoBehaviour
     //public Text speedometer;
 
     //Local variables
-    float accelerationInput = 0;
-    float steeringInput = 0;
+    public float accelerationInput = 0;
+    public float steeringInput = 0;
 
     float rotationAngle = 0;
 
