@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.78
+      value: -33.342
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -65.31
+      value: -64.956
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.z
@@ -107,4 +107,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiMode: 1
   maxSpeed: 1000
-  isAvoidingCars: 1

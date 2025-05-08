@@ -101,11 +101,11 @@ public class CarAIHandler : MonoBehaviour
             float distanceToWayPoint = (targetPosition - transform.position).magnitude;
 
             //Navigate towards nearest point on line
-            if (distanceToWayPoint > 5)
+            if (distanceToWayPoint > 1)
             {
                 Vector3 nearestPointOnTheWayPointLine = FindNearestPointOnLine(previousWaypoint.transform.position, currentWaypoint.transform.position, transform.position);
 
-                float segments = distanceToWayPoint / 5.0f;
+                float segments = distanceToWayPoint / 1.0f;
 
                 targetPosition = (targetPosition + nearestPointOnTheWayPointLine * segments) / (segments + 1);
 
@@ -241,13 +241,13 @@ public class CarAIHandler : MonoBehaviour
 
             //We want to be able to control how much desure the AI has to drive towards the waypoint vs avoiding the other car.
             //As we get closer to the waypoint the desire to reach the waypoint increases.
-            float driveToTargetInfluence = 6.0f / distanceToTarget;
+            float driveToTargetInfluence = 1.0f / distanceToTarget;
 
             //Ensure that we limit the value to between 30% and 100% as we always want the AI to desire to reach the waypoint.
             driveToTargetInfluence = Mathf.Clamp(driveToTargetInfluence, 0.30f, 1.0f);
 
             //The desire to avoid the car is simply the inverse to reach the waypoint
-            float avoidenceInfluence = 1.0f - driveToTargetInfluence;
+            float avoidenceInfluence = 2.0f - driveToTargetInfluence;
 
             //Reduce jittering a little bit by using a lerp
             avoidenceVectorLerped = Vector2.Lerp(avoidenceVectorLerped, avoidenceVector, Time.fixedDeltaTime * 4);
