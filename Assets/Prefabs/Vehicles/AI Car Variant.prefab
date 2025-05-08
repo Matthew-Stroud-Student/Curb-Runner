@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 1638941267002565557, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.78
@@ -60,11 +64,24 @@ PrefabInstance:
       propertyPath: m_TargetDisplay
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5631970249829353648, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582971220365214932, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303675134053757633, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8476574942728053902, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2024009024122343765, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
     - {fileID: 3508519154178972770, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
+    - {fileID: 7358802194289427258, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 794762261704882725, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
@@ -90,3 +107,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiMode: 1
   maxSpeed: 1000
+  isAvoidingCars: 1

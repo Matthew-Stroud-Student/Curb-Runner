@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8476574942728053902}
   - component: {fileID: 8972823847110885648}
   - component: {fileID: 3843584937746974244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -135,7 +135,8 @@ MonoBehaviour:
   turnFactor: 0.7
   driftFactor: 0.1
   minSpeedBeforeAllowTurning: 0.5
-  speedometer: {fileID: 161385356775489034}
+  accelerationInput: 0
+  steeringInput: 0
 --- !u!114 &3843584937746974244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ GameObject:
   - component: {fileID: 85126410814612601}
   - component: {fileID: 7405423208481696074}
   - component: {fileID: 3589288225045961750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelTrailerRendererRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659627953813817286}
   - component: {fileID: 365282082675349423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -393,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6916792425463392}
   - component: {fileID: 1934335061999003554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +483,7 @@ GameObject:
   - component: {fileID: 5675794990362843412}
   - component: {fileID: 6261395669645258762}
   - component: {fileID: 161385356775489034}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: speedometer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +562,7 @@ GameObject:
   - component: {fileID: 6224903509795371487}
   - component: {fileID: 6721108694804509510}
   - component: {fileID: 7055418150831653411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelTrailerRendererLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +712,7 @@ GameObject:
   - component: {fileID: 3208947771656606238}
   - component: {fileID: 5773944894552188309}
   - component: {fileID: 2228658176621152572}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleSystemSmokeRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5561,7 +5562,7 @@ GameObject:
   - component: {fileID: 4268778381916544439}
   - component: {fileID: 3137499897101319538}
   - component: {fileID: 4116890032808434134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleSystemSmokeLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10411,7 +10412,7 @@ GameObject:
   - component: {fileID: 4123785736053915657}
   - component: {fileID: 2825059585227262173}
   - component: {fileID: 8832741781741909449}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
