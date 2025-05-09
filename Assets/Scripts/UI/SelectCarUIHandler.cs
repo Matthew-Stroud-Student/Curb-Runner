@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectCarUIHandler : MonoBehaviour
 {
@@ -39,6 +40,11 @@ public class SelectCarUIHandler : MonoBehaviour
         {
             OnNextCar();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnSelectCar();
+        }
     }
 
     public void OnPreviousCar()
@@ -67,6 +73,15 @@ public class SelectCarUIHandler : MonoBehaviour
         StartCoroutine(SpawnCarCO(false));
     }
 
+    public void OnSelectCar()
+    {
+        PlayerPrefs.SetInt("P1SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
+
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("SpawnCar");
+    }
+
     IEnumerator SpawnCarCO(bool isCarAppearingOnRightSide)
     {
         isChangingCar = true;
@@ -80,7 +95,7 @@ public class SelectCarUIHandler : MonoBehaviour
         carUIHandler.SetupCar(carDatas[selectedCarIndex]);
         carUIHandler.StartCarEntranceAnimation(isCarAppearingOnRightSide);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
 
         isChangingCar = false;
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AI
   - CheckPoint
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

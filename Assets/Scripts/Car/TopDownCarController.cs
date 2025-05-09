@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TopDownCarController : MonoBehaviour
 {
@@ -49,7 +50,10 @@ public class TopDownCarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            LeaveToMenu();
+        }
     }
 
     //Frame-rate independent for physics calculations
@@ -212,5 +216,10 @@ public class TopDownCarController : MonoBehaviour
     public Surface.SurfaceTypes GetSurface()
     {
         return carSurfaceHandler.GetCurrentSurface();
+    }
+
+    public void LeaveToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
