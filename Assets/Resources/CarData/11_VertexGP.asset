@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370110a93ed433479bf5c3a8212f4d5, type: 3}
+  m_Name: 11_VertexGP
+  m_EditorClassIdentifier: 
+  carUniqueID: 10
+  carUISprite: {fileID: 2747791552749183968, guid: 4f56ef0062fc6324688befc3d1e3aefe, type: 3}
+  carPrefab: {fileID: 3618261350513995792, guid: 7c7a301140666074ba0879f6c74bb591, type: 3}

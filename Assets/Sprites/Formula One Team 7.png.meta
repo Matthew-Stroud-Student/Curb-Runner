@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Formula One Team 7_0: 4050904890919779116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370110a93ed433479bf5c3a8212f4d5, type: 3}
+  m_Name: 3_BisonGP
+  m_EditorClassIdentifier: 
+  carUniqueID: 2
+  carUISprite: {fileID: -3408531947896072144, guid: 5936ba5acda679648a8ba64b456c3b4d, type: 3}
+  carPrefab: {fileID: 1912746020443099824, guid: 106f120c16b74044f9bb058dbd69063b, type: 3}

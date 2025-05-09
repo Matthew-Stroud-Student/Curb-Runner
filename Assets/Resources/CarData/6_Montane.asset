@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370110a93ed433479bf5c3a8212f4d5, type: 3}
+  m_Name: 6_Montane
+  m_EditorClassIdentifier: 
+  carUniqueID: 5
+  carUISprite: {fileID: -3757914209750712317, guid: c20e8bb602c0ff34da3f9dc0523317ca, type: 3}
+  carPrefab: {fileID: 1459088005269770409, guid: f58ca73da2965644993d2a704be1adbd, type: 3}

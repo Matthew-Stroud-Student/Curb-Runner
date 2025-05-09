@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.342
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -64.956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.61785966
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalRotation.x
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.78628844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775263727547268624, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -103.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4123785736053915657, guid: 761fbf2cad3a4c345999082968ba1745, type: 3}
       propertyPath: m_TargetDisplay
@@ -107,3 +107,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiMode: 1
   maxSpeed: 1000
+  isAvoidingCars: 1

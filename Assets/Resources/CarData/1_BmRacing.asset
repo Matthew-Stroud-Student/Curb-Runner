@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370110a93ed433479bf5c3a8212f4d5, type: 3}
+  m_Name: 1_BmRacing
+  m_EditorClassIdentifier: 
+  carUniqueID: 0
+  carUISprite: {fileID: 1127386026049717078, guid: 9e3de9d6abf4fb94692f72aaa2fdaee6, type: 3}
+  carPrefab: {fileID: 273726970307710740, guid: ff74988bcc9af584eb9b933b0c87891b, type: 3}

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370110a93ed433479bf5c3a8212f4d5, type: 3}
+  m_Name: 8_BoltingBisons
+  m_EditorClassIdentifier: 
+  carUniqueID: 7
+  carUISprite: {fileID: -2526008003368395582, guid: c2d7d6e73609e2a44a005768cc557def, type: 3}
+  carPrefab: {fileID: 2111705671450020405, guid: f9042df942cdbcc469440661b5fd1952, type: 3}

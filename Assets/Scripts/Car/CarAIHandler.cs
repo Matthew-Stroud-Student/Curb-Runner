@@ -200,7 +200,7 @@ public class CarAIHandler : MonoBehaviour
         capsuleCollider2D.enabled = false;
 
         //Perform the circle cast in front of the car with a slight offset forward and only in the car layer
-        RaycastHit2D raycastHit2d = Physics2D.CircleCast(transform.position + transform.up * 0.18f, 0.2f, transform.up, 1, 1 << LayerMask.NameToLayer("Car"));
+        RaycastHit2D raycastHit2d = Physics2D.CircleCast(transform.position + transform.up * 0.18f, 0.2f, transform.up, 0.5f, 1 << LayerMask.NameToLayer("Car"));
 
         //Enable the colliders again so the car can collide and other cars can detect it.
         capsuleCollider2D.enabled = true;
@@ -208,7 +208,7 @@ public class CarAIHandler : MonoBehaviour
         if (raycastHit2d.collider != null)
         {
             //Draw a red line showing how long the detection is, make it red since we have detected another car
-            Debug.DrawRay(transform.position, transform.up * 1, Color.red);
+            Debug.DrawRay(transform.position, transform.up * 0.5f, Color.red);
 
             position = raycastHit2d.collider.transform.position;
             otherCarRightVector = raycastHit2d.collider.transform.right;
@@ -247,7 +247,7 @@ public class CarAIHandler : MonoBehaviour
             driveToTargetInfluence = Mathf.Clamp(driveToTargetInfluence, 0.30f, 1.0f);
 
             //The desire to avoid the car is simply the inverse to reach the waypoint
-            float avoidenceInfluence = 2.0f - driveToTargetInfluence;
+            float avoidenceInfluence = 5.0f - driveToTargetInfluence;
 
             //Reduce jittering a little bit by using a lerp
             avoidenceVectorLerped = Vector2.Lerp(avoidenceVectorLerped, avoidenceVector, Time.fixedDeltaTime * 4);
@@ -257,10 +257,10 @@ public class CarAIHandler : MonoBehaviour
             newVectorToTarget.Normalize();
 
             //Draw the vector which indicates the avoidence vector in green.
-            Debug.DrawRay(transform.position, avoidenceVector * 1, Color.green);
+            Debug.DrawRay(transform.position, avoidenceVector * 0.5f, Color.green);
 
             //Draw the vector that the car will actually take in yellow.
-            Debug.DrawRay(transform.position, newVectorToTarget * 1, Color.yellow);
+            Debug.DrawRay(transform.position, newVectorToTarget * 0.5f, Color.yellow);
 
             return;
         }
